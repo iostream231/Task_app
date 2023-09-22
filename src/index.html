@@ -1,12 +1,116 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./create_style.css">
+    <title>Vite + TS</title>
+    <script src="./create_script.js"></script>
+    <script src="./main.js"></script>
   </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+  <body onload="load_stuff()">
+    <header class="header">
+        <div class="time">
+            <span id="timer">12:00PM. Friday, 01 Sept 2023</span>
+        </div>
+        <div class="settings">
+            <a href="/settings" class="set">
+                ⚙️  &nbsp; Settings
+            </a> 
+        </div>
+    </header>
+
+    <main class="task_list" id="main_tl">
+        <ul>
+        </ul>
+        <button class="add_btn" onclick="btn_add_click()">+</button>
+    </main>
+
+    <section class="create_list" id="create" style="display: none;">
+        <form id="cr_vals">
+            <label for="name">Task Name : </label>
+            <input type="text" name="name" value="" id="name" required>
+
+            <label for="type">Type : </label>
+            <div class="type">
+                <div>
+                    <input type="checkbox" id="timed"> Timed.
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="priority"> Priority.
+                </div>
+            </div>
+
+            <label for="priority">Priority : </label>
+            <input type="text" name="priority" id="priority" style="display: none;" value="A">
+            <div class="selector">
+                <div class="task_type selected tt_a" data-type="A">A</div>
+                <div class="task_type tt_b" data-type="B">B</div>
+                <div class="task_type tt_c" data-type="C">C</div>
+                <div class="task_type tt_d" data-type="D">D</div>
+                <div class="task_type tt_e" data-type="E">E</div>
+            </div>
+
+            <input type="text" name="time_int" id="time_int" style="display: none;">
+            <label for="time_int"> Time : </label>
+            <div class="par_time_sel">
+                <!--Time indicators-->
+                <div class="indicators">
+                    <div class="hour">00:00</div>
+                    <div class="hour">01:00</div>
+                    <div class="hour">02:00</div>
+                    <div class="hour">03:00</div>
+                    <div class="hour">04:00</div>
+                    <div class="hour">05:00</div>
+                    <div class="hour">06:00</div>
+                    <div class="hour">07:00</div>
+                    <div class="hour">08:00</div>
+                    <div class="hour">09:00</div>
+                    <div class="hour">10:00</div>
+                    <div class="hour">11:00</div>
+                    <div class="hour">12:00</div>
+                    <div class="hour">13:00</div>
+                    <div class="hour">14:00</div>
+                    <div class="hour">15:00</div>
+                    <div class="hour">16:00</div>
+                    <div class="hour">17:00</div>
+                    <div class="hour">18:00</div>
+                    <div class="hour">19:00</div>
+                    <div class="hour">20:00</div>
+                    <div class="hour">21:00</div>
+                    <div class="hour">22:00</div>
+                    <div class="hour">23:00</div>
+                </div>
+
+                <div class="time_sel" id="time_sel"></div>
+
+                <!--time input-->
+                <div class="inputs" id="inp">
+                    <div class="inp1" id="inp1">
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="inp2" id="inp2">
+                         <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                </div>
+                
+                <!--Time input indicator-->
+                <div class="time_ind">
+                    From: <input type="time" name="start_time" id="st_tm" class="st_tm" disabled value="07:00"> 
+                    To: <input type="time" name="end_time" id="ed_tm" class="ed_tm" disabled value="12:00">
+                </div>
+            </div>
+
+            <div class="submit_container">
+                <button type="submit">+ Add</button>
+
+            </div>
+
+        </form>
+    </section>
+        
   </body>
 </html>

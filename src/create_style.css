@@ -1,0 +1,253 @@
+
+:root {
+    --bg-color : #273533;
+    --ft-color : #ffffff;
+    --sec-color : #80b7af;
+    --acc-color : #56998f;
+
+    --a-color : #eb4d4b;
+    --b-color : #f0932b;
+    --c-color : #badc58;
+    --d-color : #686de0;
+    --e-color : #7ed6df;
+}
+* {
+    user-select: none
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+/* General Info */
+.create_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    border : 2px solid white;
+    padding : 5em;
+    border-radius: 20px;
+}
+
+
+.create_list form {
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    color : white;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+.create_list label {
+    color : white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+
+
+/* Text Input CSS */
+
+.create_list input[type="text"] {
+    padding: .6em;
+    width: 95%;
+    background: rgba(0, 0, 0, .25);
+    outline: none;
+    border: 1px solid black;
+    color : white;
+    font-family : 'Ubuntu', sans-serif;
+    font-size: 1.1em;
+    border-radius: 4px;
+}
+
+.create_list input[type="text"]:focus {
+   border : 1px solid var(--acc-color);
+   transition : cubic-bezier(0.86, 0, 0.07, 1) 100ms;
+}
+
+
+
+/* Priority CSS */
+.create_list .selector {
+    display: flex;
+    width : 100%;
+    justify-content: space-between;
+}
+
+.create_list .selector div {
+    padding: .55em .75em;
+    font-size: 1.25em;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+
+.create_list .selector div.selected[data-type="A"] {
+    background: var(--a-color);
+    color : #ffffff;
+}
+
+.create_list .selector div.selected[data-type="B"] {
+    background: var(--b-color);
+    color: white;
+} 
+
+.create_list .selector div.selected[data-type="C"] {
+    background: var(--c-color);
+    color: white;
+}
+.create_list .selector div.selected[data-type="D"] {
+    background: var(--d-color);
+    color : white;
+}
+.create_list .selector div.selected[data-type="E"] {
+    background: var(--e-color);
+    color : white;
+}
+.create_list .selector div.task_type:hover {
+    color : white;
+    transition: cubic-bezier(0.77, 0, 0.175, 1) 250ms;
+    cursor: pointer;
+}
+
+.create_list .selector div.tt_a:hover {
+    background: var(--a-color);
+}
+.create_list .selector div.tt_b:hover {
+    background: var(--b-color);
+}
+.create_list .selector div.tt_c:hover {
+    background: var(--c-color);
+}
+.create_list .selector div.tt_d:hover {
+    background: var(--d-color);
+}
+.create_list .selector div.tt_e:hover{ 
+    background: var(--e-color);
+}
+
+
+/* Time Selector CSS */
+.par_time_sel {
+    display: flex;
+    width : 100%;
+    flex-direction: column;
+    gap: .75em;
+    padding : 1em;
+}
+
+.time_sel {
+    display: block;
+    width: 100%;
+    height: 3em;
+    background: #222222;
+}
+
+.indicators {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.indicators .hour {
+    transform: rotate(90deg);
+    padding : 0;
+    margin : 0;
+    font-size: .65em;
+    color : gray;
+    user-select: none;
+}
+
+.inputs {
+    display: flex;
+    width: 100%;
+}
+.inp2 { 
+    left : 50%;
+    position : relative;
+}
+.inp1 {
+    left: 30%;
+    position: relative;
+}
+
+.inp1:hover {
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 150ms;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+.inp2:hover {
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 150ms;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+/* Task Time Selector Styling */
+.new_task_tf {
+    background-color: var(--acc-color);
+    height: 100%;
+    width: 22%;
+    left: 30.5%;
+    position: relative;
+}
+
+/* Time Indicator Styling */
+.time_ind {
+    width: 100%;
+    display: flex;
+    gap : 2em;
+    align-items : baseline;
+}
+
+.time_ind input.st_tm {
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: .5em;
+    border : none;
+    color : white;
+    font-family: 'Ubuntu', sans-serif;
+}
+.time_ind input.ed_tm {
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: .5em;
+    border : none;
+    color : white;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+/*  Type Selector */
+.type {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.type input {
+    cursor: pointer;
+}
+
+/* Submit Container */
+.submit_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit_container button {
+    background-color: #222222;
+    border : none;
+    color : white;
+    font-size: 1em;
+    padding: .75em 1.5em;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}
+.submit_container button:hover {
+    background-color: var(--c-color);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 300ms;
+    color: #222222;
+}

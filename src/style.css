@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Ubuntu:wght@400;500;700&display=swap');
+:root {
+    --bg-color : #273533;
+    --ft-color : #ffffff;
+    --sec-color : #80b7af;
+    --acc-color : #56998f;
+
+    --a-color : #eb4d4b;
+    --b-color : #f0932b;
+    --c-color : #badc58;
+    --d-color : #686de0;
+    --e-color : #7ed6df;
+}
+
+* {
+    text-decoration: none;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    
+    background: var(--bg-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+
+/*================================= Nav Section ======================================*/
+/* Header Container */
+.header {
+    display: flex;
+    width: 99%;
+    background: black;
+    color: #fff;
+    border-radius: 8px;
+    align-items: stretch;
+}
+
+
+/* Timer Container */
+.time {
+    width : 75%;
+    height: 100%;
+    padding: 2em;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    border-right: 1px solid white;
+}
+
+/* Settings Button */
+.settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: auto;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.35em;
+    font-weight: 700;
+    border-radius: 0px 8px 8px 0px;
+
+}
+.settings:hover {
+    cursor : pointer;
+    background: var(--sec-color);
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) 250ms;
+}
+.settings a {
+    color : white;
+}
+
+
+
+
+/*============================== Main Section ==================================*/
+/* Task List Container */
+.task_list { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    color : white; 
+    border-radius: 8px;
+    flex-direction: column;
+    gap: .75em
+}
+
+
+/* Task group container */
+.task_list ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+    display: flex;
+    flex-direction: column;
+    
+    gap: .5em;
+}
+
+
+
+/* Task <li> Container */
+.task_list ul li {
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+    width : 100%;
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+
+    font-family: 'Ubuntu', sans-serif;
+    background: black;
+
+    border-radius: 4px;
+}
+/* Task <li> Hover Transform Effect */
+.task_list ul li:hover {
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 250ms;
+    transform: translateY(-.25em);
+    cursor : pointer;
+    border : 1px solid var(--acc-color);
+}
+
+/* Task Type Hover Backgroud Effect */
+.task_list ul li .task_type {
+    width : 5%;
+    font-size: 1.25em;
+    font-weight: 700;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px 0 0 4px;
+}
+.task_list ul li .task_type:hover {
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 250ms;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* Task Text */
+.task_list ul li p {
+    width: 95%;
+    text-align: center;
+}
+
+
+
+.task_list li.done p {
+    text-decoration: line-through;
+    color : var(--bg-color);
+}
+
+
+
+
+/* Task Type Color */
+.tt_a {
+    color : var(--a-color);
+}
+
+.tt_b {
+     color : var(--b-color);
+}
+.tt_c {
+    color : var(--c-color);
+}
+.tt_d {
+    color : var(--d-color);
+}
+.tt_e {
+    color : var(--e-color);
+}
+
+
+.tt_a:hover {
+    background: var(--a-color);
+}
+.tt_b:hover {
+    background: var(--b-color);
+}
+.tt_c:hover {
+    background: var(--c-color);
+}
+.tt_d:hover {
+    background: var(--d-color);
+}
+.tt_e:hover{ 
+    background: var(--e-color);
+}
+
+/*  Add Button */
+.add_btn {
+    background-color: #111111;
+    border : none;
+    color : white;
+    font-size: 2em;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 6px;
+    width : 95%;
+    cursor: pointer;
+}
+
+.add_btn:hover {
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 150ms;
+    transform: scale(1.025);
+}
+
