@@ -172,8 +172,8 @@ async function set_inp() {
                         body : JSON.stringify({
                             name : name,
                             task_type : 'F',
-                            start_time : Math.floor(start_time.getTime() / 1000),
-                            end_time : Math.floor(end_time.getTime() / 1000)
+                            start_time : Math.floor(start_time.getTime() / 1000) + 3600,
+                            end_time : Math.floor(end_time.getTime() / 1000) + 3600 // Backend fuckery
                         })
                 });
         } else {
@@ -199,6 +199,11 @@ async function set_inp() {
         window.location.reload();
     }
 
+    //--------------- Window Escape Click
+    window.addEventListener('keydown', (ev: KeyboardEvent) => {
+        if(ev.key === "Escape")
+            window.location.reload();
+    });
 }
 
 function btn_add_click() {

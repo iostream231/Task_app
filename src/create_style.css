@@ -234,7 +234,7 @@
 .submit_container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .submit_container button {
@@ -246,8 +246,14 @@
     font-family: 'Ubuntu', sans-serif;
     cursor: pointer;
 }
-.submit_container button:hover {
+.submit_container button[type="submit"]:hover {
     background-color: var(--c-color);
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 300ms;
     color: #222222;
 }
+.submit_container button:hover {
+    background-color: var(--a-color);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 300ms;
+    color : #222222
+}
+/* .submit_container  */

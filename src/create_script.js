@@ -165,8 +165,8 @@ function set_inp() {
                                         body: JSON.stringify({
                                             name: name,
                                             task_type: 'F',
-                                            start_time: Math.floor(start_time.getTime() / 1000),
-                                            end_time: Math.floor(end_time.getTime() / 1000)
+                                            start_time: Math.floor(start_time.getTime() / 1000) + 3600,
+                                            end_time: Math.floor(end_time.getTime() / 1000) + 3600 // Backend fuckery
                                         })
                                     })];
                             case 1:
@@ -205,6 +205,11 @@ function set_inp() {
                     });
                 });
             };
+            //--------------- Window Escape Click
+            window.addEventListener('keydown', function (ev) {
+                if (ev.key === "Escape")
+                    window.location.reload();
+            });
             return [2 /*return*/];
         });
     });

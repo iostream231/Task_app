@@ -162,7 +162,7 @@ body {
 
 .task_list li.done p {
     text-decoration: line-through;
-    color : var(--bg-color);
+    color : gray;
 }
 
 
